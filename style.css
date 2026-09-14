@@ -1,0 +1,150 @@
+/* Colours are the app icon's, as in Design/guide.py, with the soft grey darkened
+   enough to pass contrast on white. No web fonts: nothing on these pages loads from
+   anywhere else. */
+:root {
+  --red: #D93A32;
+  --red-deep: #A82A24;
+  --ink: #1A1D23;
+  --body: #3D444F;
+  --soft: #646C78;
+  --rule: #DCE0E6;
+  --wash: #F4F6F8;
+  --paper: #FFFFFF;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --red: #F0625A;
+    --red-deep: #F58A83;
+    --ink: #F2F4F7;
+    --body: #C9CED6;
+    --soft: #9AA3AF;
+    --rule: #2E333B;
+    --wash: #1C2027;
+    --paper: #121418;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding-inline: 20px;
+  background: var(--paper);
+  color: var(--body);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding-block: 44px 64px;
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.masthead img {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+}
+
+.wordmark {
+  margin: 0;
+  font: 700 1.9rem/1.1 Georgia, "Times New Roman", serif;
+  color: var(--ink);
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  color: var(--soft);
+}
+
+nav.site {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+nav.site a { color: var(--soft); text-decoration: none; }
+nav.site a:hover { color: var(--ink); }
+nav.site a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+h1 {
+  margin: 40px 0 8px;
+  font: 700 2rem/1.2 Georgia, "Times New Roman", serif;
+  color: var(--ink);
+}
+
+h2 {
+  margin: 44px 0 10px;
+  font: 700 1.35rem/1.3 Georgia, "Times New Roman", serif;
+  color: var(--ink);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 10px;
+  background: var(--red);
+}
+
+h3 {
+  margin: 28px 0 4px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 1.2em; }
+li { margin-bottom: 8px; }
+a { color: var(--red-deep); }
+strong { color: var(--ink); }
+
+.lede { font-size: 1.1rem; }
+
+.meta { font-size: 0.9rem; color: var(--soft); }
+
+.note {
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--wash);
+  border-left: 3px solid var(--red);
+}
+
+.note p:last-child { margin-bottom: 0; }
+
+.contact {
+  font-size: 1.15rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--soft);
+}
+
+footer a { color: var(--soft); }
